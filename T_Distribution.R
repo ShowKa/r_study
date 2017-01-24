@@ -1,5 +1,5 @@
 # 統計量 Tの分布の確認
-# T = ( 標本平均 - 母平均 ) * √標本数 / 不偏標準偏差	 
+# T = ( 標本平均 - 母平均 ) / ( 不偏標準偏差 / √標本数 )
 
 len = 100000
 num = 4
@@ -12,7 +12,7 @@ for (i in 1 : len) {
 	# Tの計算
 	m <- mean(data)
 	s <- sqrt(var(data))
-	t[i] <- m * sqrt(num) / s
+	t[i] <- m / (s / sqrt(num))
 }
 
 # 答え合わせ
